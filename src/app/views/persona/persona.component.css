@@ -1,9 +1,20 @@
 /* Structure */
 table {
-    width: 120%;
+    width: 95%;
+    margin-left: 35px;
+    
   }
   
   .mat-form-field {
     font-size: 14px;
-    width: 100%;
+    width: 95%;
+    margin-left: 35px;
+  }
+
+  .mat-header-cell{
+    text-align: center;
+  }
+
+  .mat-cell{
+    text-align: center;
   }
