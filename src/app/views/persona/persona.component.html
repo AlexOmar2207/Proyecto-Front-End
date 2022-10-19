@@ -33,6 +33,12 @@
     </ng-container>
   
     <!-- Symbol Column -->
+    <ng-container matColumnDef="sexo">
+      <th mat-header-cell *matHeaderCellDef > Sexo </th>
+      <td mat-cell *matCellDef="let element"> {{element.sexo.sexo}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
     <ng-container matColumnDef="pais">
       <th mat-header-cell *matHeaderCellDef > Pais </th>
       <td mat-cell *matCellDef="let element"> {{element.pais.nombre}} </td>

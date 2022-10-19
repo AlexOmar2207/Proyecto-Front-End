@@ -5,6 +5,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 import { Pais } from '../../../model/pais';
 import { PaisService } from 'src/app/service/pais.service';
+import { Sexo } from 'src/app/model/sexo';
+import { SexoService } from 'src/app/service/sexo.service';
 
 
 @Component({
@@ -16,9 +18,11 @@ export class PerosnaModalComponent implements OnInit {
 
   persona!: Persona;
   pais!: Pais[];
+  sexo!: Sexo[];
 
   constructor(
     private dialogRef: MatDialogRef<PerosnaModalComponent>,
+    private sexoService: SexoService,
     private paisService: PaisService,
     private personaService: PersonaService,
     @Inject(MAT_DIALOG_DATA) private data: Persona
@@ -31,7 +35,12 @@ export class PerosnaModalComponent implements OnInit {
     this.persona.nombres = this.data.nombres;
     this.persona.apellidos = this.data.apellidos;
     this.persona.edad = this.data.edad;
+    this.persona.sexo = this.data.sexo;
     this.persona.pais = this.data.pais;
+
+    this.sexoService.listar().subscribe(data => {
+      this.sexo = data
+    })
 
     this.paisService.listar().subscribe(data => {
       this.pais = data;

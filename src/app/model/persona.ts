@@ -6,5 +6,6 @@ export class Persona {
     nombres: string = "";
     apellidos: string = "";
     edad: number = 0;
+    sexo: string = "";
     pais!: Pais;
 }
