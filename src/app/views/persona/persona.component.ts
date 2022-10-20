@@ -15,7 +15,7 @@ import { MatSort } from '@angular/material/sort';
 })
 export class PersonaComponent implements OnInit {
 
-  displayedColumns = ['idPersona', 'nombres', 'apellidos', 'edad', 'sexo', 'pais', 'actions'];
+  displayedColumns = ['idPersona', 'nombres', 'apellidos', 'edad', 'sexo', 'pais', 'fecha','actions'];
   dataSource!: MatTableDataSource<Persona>
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -54,8 +54,9 @@ export class PersonaComponent implements OnInit {
 
   openModal(persona?: Persona){
 
+    
     let person = persona != null ? persona: new Persona();
-
+    
     this.dialog.open(PerosnaModalComponent,{
       width: '300px',
       data: person

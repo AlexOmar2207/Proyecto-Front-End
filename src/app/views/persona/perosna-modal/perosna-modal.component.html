@@ -12,9 +12,14 @@
     <mat-label>Edad</mat-label>
     <input matInput placeholder="Edad" [(ngModel)]="persona.edad">
   </mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Fecha</mat-label>
+    <input type="date" matInput placeholder="Fecha" [(ngModel)]="persona.fecha">
+  </mat-form-field>
   
   <mat-form-field appearance="fill">
-    <mat-label *ngIf="persona.pais">{{persona.sexo.sexo}}</mat-label>
+    <mat-label *ngIf="persona.pais">{{persona.sexo.sexo}}</mat-label> 
     <mat-select matInput placeholder="seleciona tu genero" [(ngModel)]="persona.sexo">
       <mat-option *ngFor="let s of sexo" [value]="s">
         {{s.sexo}}

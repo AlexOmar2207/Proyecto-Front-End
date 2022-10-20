@@ -29,7 +29,13 @@
     <!-- Symbol Column -->
     <ng-container matColumnDef="edad">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Edad </th>
-      <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+      <td mat-cell *matCellDef="let element " > {{element.edad}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef > Fecha </th>
+      <td mat-cell *matCellDef="let element"> {{element.fecha | date: 'yyyy-MM-dd'}} </td>
     </ng-container>
   
     <!-- Symbol Column -->
@@ -67,7 +73,7 @@
 
   <mat-paginator [length]="100"
               [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"
+              [pageSizeOptions]="[10, 25, 100]"
               aria-label="Select page"
               [length]="cant" (page)="Paginator($event)">
 </mat-paginator>

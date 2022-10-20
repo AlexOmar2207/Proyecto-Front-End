@@ -35,6 +35,7 @@ export class PerosnaModalComponent implements OnInit {
     this.persona.nombres = this.data.nombres;
     this.persona.apellidos = this.data.apellidos;
     this.persona.edad = this.data.edad;
+    this.persona.fecha = this.data.fecha;
     this.persona.sexo = this.data.sexo;
     this.persona.pais = this.data.pais;
 
@@ -47,6 +48,7 @@ export class PerosnaModalComponent implements OnInit {
     })
   }
 
+ 
   aceptar(){
     if(this.persona != null && this.persona.idPersona > 0){
 
@@ -56,6 +58,7 @@ export class PerosnaModalComponent implements OnInit {
           this.personaService.personaActualizar.next(data);
         })
       });
+
     }else{
       this.personaService.registrar(this.persona).subscribe(()=>{
         this.personaService.listar().subscribe(data => {
